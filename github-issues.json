@@ -1,0 +1,85 @@
+{
+  "issues": [
+    {
+      "title": "Create hardcoded exercise library",
+      "body": "## Description\nCreate a data structure containing 10-15 basic exercises that can be used in workout routines.\n\n## Requirements\n- Include exercise name\n- Include default duration/reps\n- Include difficulty level (beginner/intermediate)\n- Store in a structured format (JSON, Python dict, or class)\n\n## Example Exercises\n- Jumping Jacks\n- Bodyweight Squats\n- Push-ups (modified and regular)\n- Plank\n- Lunges\n- High Knees\n- Mountain Climbers\n- Burpees\n- Arm Circles\n- Crunches\n\n## Acceptance Criteria\n- [ ] At least 10 exercises defined\n- [ ] Each exercise has name, duration/reps, and difficulty level\n- [ ] Data structure is easily accessible by other components",
+      "labels": ["feature", "core-functionality", "data"],
+      "assignee": "team-member-1",
+      "due_date": "2025-12-11"
+    },
+    {
+      "title": "Implement fitness level intent",
+      "body": "## Description\nCreate an intent handler that captures and stores the user's fitness level.\n\n## Requirements\n- Prompt user to select fitness level (beginner/intermediate)\n- Validate user input\n- Store fitness level for the current session\n- Handle invalid responses gracefully\n\n## Example Flow\n```\nBot: Welcome! Are you a beginner or intermediate exerciser?\nUser: Beginner\nBot: Great! [proceeds to next question]\n```\n\n## Acceptance Criteria\n- [ ] User can specify beginner or intermediate\n- [ ] Invalid inputs are handled with helpful error messages\n- [ ] Fitness level is stored for routine generation",
+      "labels": ["feature", "intent", "user-input"],
+      "assignee": "team-member-2",
+      "due_date": "2025-12-13"
+    },
+    {
+      "title": "Implement time availability intent",
+      "body": "## Description\nCreate an intent handler that captures how much time the user has available for their workout.\n\n## Requirements\n- Prompt user to select available time (15 min / 30 min / 45 min)\n- Validate user input\n- Store time selection for routine generation\n- Handle invalid responses gracefully\n\n## Example Flow\n```\nBot: How much time do you have today?\nUser: 20 minutes\nBot: Perfect! Here's your 20-minute workout...\n```\n\n## Acceptance Criteria\n- [ ] User can specify time (15/30/45 minutes or similar)\n- [ ] System accepts approximate times and rounds appropriately\n- [ ] Invalid inputs are handled with helpful error messages\n- [ ] Time is stored for routine generation",
+      "labels": ["feature", "intent", "user-input"],
+      "assignee": "team-member-2",
+      "due_date": "2025-12-13"
+    },
+    {
+      "title": "Build workout routine generator",
+      "body": "## Description\nCreate logic to generate appropriate workout routines based on user's fitness level and available time.\n\n## Requirements\n- Generate routines based on fitness level (beginner/intermediate)\n- Generate routines based on time (15/30/45 min)\n- Minimum 3 pre-built routines:\n  - Beginner 15 min\n  - Beginner 30 min\n  - Intermediate 30 min\n- Select 3-5 exercises per routine\n- Include repetition instructions (e.g., \"Repeat 2x\")\n\n## Example Output\n```\nPerfect! Here's your 20-minute beginner workout:\n1. Jumping Jacks - 2 minutes\n2. Bodyweight Squats - 10 reps\n3. Push-ups (modified) - 5 reps\n4. Plank - 30 seconds\n5. Repeat 2x\n```\n\n## Acceptance Criteria\n- [ ] At least 3 distinct pre-built routines\n- [ ] Routines contain 3-5 exercises\n- [ ] Exercises match user's fitness level\n- [ ] Total routine duration matches requested time\n- [ ] Clear instructions for reps/duration/sets",
+      "labels": ["feature", "core-functionality", "routine-generator"],
+      "assignee": "team-member-1",
+      "due_date": "2025-12-15"
+    },
+    {
+      "title": "Implement get routine intent",
+      "body": "## Description\nCreate an intent handler that generates and displays a workout routine to the user.\n\n## Requirements\n- Trigger routine generation based on user's fitness level and time\n- Display routine in a clear, formatted way\n- Ask if user wants explanations for any exercises\n- Handle cases where user hasn't set level/time yet\n\n## Example Flow\n```\nUser: Give me a workout\nBot: Perfect! Here's your 20-minute beginner workout:\n     1. Jumping Jacks - 2 minutes\n     2. Bodyweight Squats - 10 reps\n     ...\n     Want me to explain any exercise?\n```\n\n## Acceptance Criteria\n- [ ] Routine is generated based on stored preferences\n- [ ] Routine displays clearly with numbered list\n- [ ] User is prompted if they want exercise explanations\n- [ ] Handles missing user preferences gracefully",
+      "labels": ["feature", "intent", "core-functionality"],
+      "assignee": "team-member-3",
+      "due_date": "2025-12-16"
+    },
+    {
+      "title": "Integrate AI API for exercise explanations",
+      "body": "## Description\nIntegrate with an AI API (OpenAI, Anthropic, etc.) to provide detailed exercise explanations when users ask.\n\n## Requirements\n- Set up API client for chosen AI service\n- Create prompts that generate helpful exercise explanations\n- Focus on proper form, common mistakes, and modifications\n- Handle API errors gracefully\n- Keep explanations concise and beginner-friendly\n\n## Example Interaction\n```\nUser: How do I do a plank?\nBot: Great question! Here's how to do a proper plank:\n     - Start in a push-up position\n     - Keep your body in a straight line...\n     [AI-generated detailed explanation]\n```\n\n## Acceptance Criteria\n- [ ] AI API is configured with credentials\n- [ ] Exercise explanations are clear and helpful\n- [ ] API errors are handled without crashing\n- [ ] Response time is reasonable (< 5 seconds)",
+      "labels": ["feature", "ai-integration", "api"],
+      "assignee": "team-member-3",
+      "due_date": "2025-12-18"
+    },
+    {
+      "title": "Implement explain exercise intent",
+      "body": "## Description\nCreate an intent handler that detects when users ask for exercise explanations and triggers the AI API.\n\n## Requirements\n- Detect when user asks about an exercise\n- Extract exercise name from user query\n- Call AI API with appropriate prompt\n- Display explanation to user\n- Handle exercises not in the library\n\n## Example Flow\n```\nUser: How do I do a plank?\nBot: [Calls AI API and displays explanation]\n\nUser: Explain squats\nBot: [Calls AI API and displays explanation]\n```\n\n## Acceptance Criteria\n- [ ] Detects exercise explanation requests\n- [ ] Extracts exercise name correctly\n- [ ] Generates helpful AI explanations\n- [ ] Handles unknown exercises gracefully",
+      "labels": ["feature", "intent", "ai-integration"],
+      "assignee": "team-member-3",
+      "due_date": "2025-12-18"
+    },
+    {
+      "title": "Implement workout completion tracking",
+      "body": "## Description\nCreate a system to track when users complete workouts and maintain a count.\n\n## Requirements\n- Save workout completion count to a file\n- Increment count when user indicates they finished\n- Persist count across sessions\n- Display encouraging message with count\n\n## Example Flow\n```\nUser: Done!\nBot: Awesome! That's workout #3 this week. Keep going! 💪\n```\n\n## Technical Notes\n- Use simple file storage (JSON or text file)\n- Store count with timestamp if possible\n- Consider storing by user if multiple users supported\n\n## Acceptance Criteria\n- [ ] Workout count persists to file\n- [ ] Count increments correctly\n- [ ] Count persists across app restarts\n- [ ] Encouraging message displayed with count",
+      "labels": ["feature", "tracking", "persistence"],
+      "assignee": "team-member-4",
+      "due_date": "2025-12-20"
+    },
+    {
+      "title": "Implement log completion intent",
+      "body": "## Description\nCreate an intent handler that detects when users complete a workout and triggers the tracking system.\n\n## Requirements\n- Detect completion phrases (\"done\", \"finished\", \"completed\")\n- Increment workout counter\n- Display motivational message\n- Show current workout count\n\n## Example Flow\n```\nUser: I'm done!\nBot: Awesome! That's workout #3 this week. Keep going! 💪\n\nUser: Finished\nBot: Great job! That's workout #4 this week. You're on fire!\n```\n\n## Acceptance Criteria\n- [ ] Detects various completion phrases\n- [ ] Increments counter correctly\n- [ ] Displays motivational messages\n- [ ] Shows accurate workout count",
+      "labels": ["feature", "intent", "tracking"]
+    },
+    {
+      "title": "Create main conversational interface",
+      "body": "## Description\nBuild the main conversational loop that ties all intents together into a cohesive user experience.\n\n## Requirements\n- Welcome message when app starts\n- Route user input to appropriate intent handlers\n- Maintain conversation context\n- Handle unknown/invalid inputs gracefully\n- Provide help/guidance when needed\n\n## Example Flow\n```\nBot: Welcome! Are you a beginner or intermediate exerciser?\nUser: Beginner\nBot: How much time do you have today?\nUser: 20 minutes\nBot: Perfect! Here's your 20-minute beginner workout:\n     [routine displayed]\n     Want me to explain any exercise?\nUser: How do I do a plank?\nBot: [explanation]\nUser: Done!\nBot: Awesome! That's workout #3 this week.\n```\n\n## Acceptance Criteria\n- [ ] Welcome message displays on startup\n- [ ] All 4 intents are accessible\n- [ ] Conversation flows naturally\n- [ ] Unknown inputs receive helpful responses\n- [ ] User can exit gracefully",
+      "labels": ["feature", "core-functionality", "ui"]
+    },
+    {
+      "title": "Add input validation and error handling",
+      "body": "## Description\nImplement comprehensive input validation and error handling throughout the application.\n\n## Requirements\n- Validate all user inputs\n- Provide helpful error messages\n- Handle edge cases (empty input, invalid formats, etc.)\n- Gracefully handle API failures\n- Don't crash on unexpected input\n\n## Areas to Cover\n- Fitness level selection\n- Time selection\n- Exercise name extraction\n- File I/O operations\n- API calls\n\n## Acceptance Criteria\n- [ ] Invalid inputs show helpful error messages\n- [ ] App doesn't crash on bad input\n- [ ] API failures are handled gracefully\n- [ ] File operations have error handling\n- [ ] User always knows what went wrong and what to do",
+      "labels": ["enhancement", "error-handling", "robustness"]
+    },
+    {
+      "title": "Write project documentation",
+      "body": "## Description\nCreate comprehensive documentation for the project including README, setup instructions, and usage guide.\n\n## Requirements\n- README.md with project overview\n- Setup/installation instructions\n- Usage examples\n- API key configuration guide\n- Architecture overview\n- Code comments where necessary\n\n## README Should Include\n- Project description\n- Features list\n- Installation steps\n- How to run the app\n- Example conversations\n- Dependencies\n- Configuration (API keys, etc.)\n\n## Acceptance Criteria\n- [ ] README.md exists and is comprehensive\n- [ ] Setup instructions are clear and complete\n- [ ] Usage examples are provided\n- [ ] API configuration is documented\n- [ ] New users can get started without help",
+      "labels": ["documentation"]
+    },
+    {
+      "title": "Add unit tests for core functionality",
+      "body": "## Description\nWrite unit tests to ensure core functionality works correctly.\n\n## Test Coverage Areas\n- Exercise library data structure\n- Routine generation logic\n- Intent detection\n- Workout counter increment/persist\n- Input validation functions\n\n## Example Tests\n- Test that beginner 15-min routine has appropriate exercises\n- Test that workout counter increments correctly\n- Test that invalid fitness level is rejected\n- Test that exercise library has minimum required exercises\n\n## Acceptance Criteria\n- [ ] Test files created\n- [ ] Core functions have test coverage\n- [ ] All tests pass\n- [ ] Tests can be run with single command\n- [ ] Edge cases are tested",
+      "labels": ["testing", "quality"]
+    }
+  ]
+}
