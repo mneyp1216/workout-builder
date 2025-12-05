@@ -4,7 +4,7 @@ A conversational AI-powered workout assistant that helps beginners and intermedi
 
 ## Team Members
 
-- Miguel Pena - [@mneyp1216](https://github.com/github-handle-1)
+- Miguel Pena - [@mneyp1216](https://github.com/mneyp1216)
 - Team Member 2 - [@github-handle-2](https://github.com/github-handle-2)
 - Team Member 3 - [@github-handle-3](https://github.com/github-handle-3)
 - Team Member 4 - [@github-handle-4](https://github.com/github-handle-4)
